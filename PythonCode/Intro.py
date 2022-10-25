@@ -2,7 +2,6 @@
 # Needed for slow_print
 import time
 # Needed to run scene 1
-import os
 
 # Prints the string letter by letter. Is used like a print statement.
 def s_print(string):
@@ -24,8 +23,7 @@ def username():
         s_print(f"You have selected {username} as your username. Is this correct?")
         userconfirm = input("yes or no: ").lower()
         if userconfirm == "yes":
+            print("")
             break
         else:
             s_print("Let's redo that then")
-
-print(username())
