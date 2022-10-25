@@ -13,17 +13,19 @@ def s_print(string):
 
 # Player enters username
 def username():
+    s_print("Welcome!")
+    time.sleep(0.7)
+    s_print("Please fill in your username.")
+    time.sleep(0.3)
+    s_print("Warning! This cannot be changed later.")
+    time.sleep(0.7)
     while True:
-        s_print("Welcome!")
-        time.sleep(0.7)
-        s_print("Please fill in your username.")
-        time.sleep(0.3)
-        s_print("Warning! This cannot be changed later.")
-        time.sleep(0.7)
         username = input("(no spaces):").strip()
         s_print(f"You have selected {username} as your username. Is this correct?")
         userconfirm = input("yes or no: ").lower()
         if userconfirm == "yes":
-            os.system('python Scene1.py')
+            break
+        else:
+            s_print("Let's redo that then")
 
 print(username())
