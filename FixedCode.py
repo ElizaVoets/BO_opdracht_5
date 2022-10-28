@@ -1,4 +1,5 @@
 from secrets import choice
+from subprocess import check_output
 import time
 
 
@@ -75,7 +76,7 @@ def ArrestedAtHomeEnding():
     choice = input("> ").strip().lower()
     while True:
         if choice == "y" or choice == "yes":
-            startcode()
+            scene_1()
         elif choice == "n" or choice == "no":
             exit()
         else:
@@ -91,7 +92,7 @@ def arrested_in_candy_floss_forest():
     choice = input("> ").strip().lower()
     while True:
         if choice == "y" or choice == "yes":
-            startcode()
+            scene_1()
         elif choice == "n" or choice == "no":
             exit()
         else:
@@ -108,11 +109,11 @@ def meltedEnding():
     choice = input("> ").strip().lower()
     while True:
         if choice == "y" or choice == "yes":
-            startcode()
+            scene_1()
         elif choice == "n" or choice == "no":
             exit()
         else:
-            print("Invalid Input. Expected: 'y' or 'n'")    
+            print("Invalid Input. Expected: 'y' or 'n'")
 
 def scene_2():
     s_print("[Y/N]: 'Then we will have to leave right now!'")
@@ -175,29 +176,96 @@ def scene_2():
     
 
 def scene_3():
+    print("SCENE 3: GINGERBREAD CITY.")
+    time.sleep(0.7)
     s_print("You arrive at Gingerbread city. Everyone there seems to be unaware of the situation.")
+    time.sleep(0.7)
     s_print("Everybody is Lunching in cafe's, Walking their gingerbread dogs, and doing whatever they to on a daily basis")
+    time.sleep(0.7)
     s_print("[Bob]: 'Do these people not know about what's happening right now?'")
+    time.sleep(0.7)
     s_print("[Y/N]: 'Seems like they don't.'")
+    time.sleep(0.7)
     s_print("[Bob]: 'Should we warn these people?'")
     choice = input("> ").lower()
+
     if choice == "yes":
         s_print("You decide to go to the major of gingerbread city and tell him about the situation.")
+        time.sleep(0.7)
         s_print("Just as you finished explaining, everything starts to shake.")
+        time.sleep(0.7)
         s_print("You go outside and you see the licorice soldiers attacking the city. You see a building falling.")
+        time.sleep(0.7)
         s_print("The problem is, You do not know if it's falling towards, or away from you.. Do you move or not?")
         choice = input(">").lower()
+
         if choice == "move":
             s_print("You move away and the building crashes down on the place you were just standing.")
+            time.sleep(0.7)
             s_print("[Bob]: 'Y/N! Are you okay??'")
+            time.sleep(0.7)
             s_print("[Y/N]: 'I'm fine..'")
+            time.sleep(0.7)
+            s_print("Just as you say that, you notice another building falling towards a little gingerbread girl.")
+            time.sleep(0.7)
+            s_print("Do you save her?")
+            choice = input("> ").lower()
+
+            if choice == "y" or choice == "yes":
+                s_print("You run towards the child, but now you have to decide if you push her forward or pull her back.")
+                time.sleep(0.7)
+                s_print("Do you push or pull?")
+                choice = input("> ").lower
+            elif choice == "n" or choice == "no":
+                s_print("You decide to do nothing, but Bob decides to save the child and sucessfully saves her.")
+                time.sleep(0.7)
+                s_print("The major thanks you and tells you to go towards the cake fields. That is the fastest way to the portal.")
+                time.sleep(0.7)
+                s_print("You leave the city and make your way to the fields.")
+                scene_4()
+                
+                if choice == "push":
+                    s_print("You push the girl away from the building, but realise you dont have enough time to get away.")
+                    time.sleep(0.7)
+                    s_print("You get crushed by the building and die.")
+                    time.sleep(0.7)
+                    print("\nCRUSHED BY A BUILDING WHILE SAVING A CHILD ENDING UNLOCKED!")
+                    time.sleep(0.7)
+                    print("DO YOU WANT TO RESTART?")
+                    while True:
+                        if choice == "y" or choice == "yes":
+                            scene_1()
+                        elif choice == "n" or choice == "no":
+                            exit()
+                        else:
+                            print("Invalid Input. Expected: 'y' or 'n'")
+                if choice == "pull":
+                    s_print("You save both yourself and the girl. The whole town starts cheering and the major thanks you.")
+                    s_print("He tells you the quickest way to the portal is through the cake fields")
+        elif choice == "don't move":
+            s_print("You decide to stay where you are. Wrong choice, the building crushes you.")
+            time.sleep(0.7)
+            print("\nCRUSHED BY BUILDING ENDING UNLOCKED")
+            time.sleep(0.7)
+            print("DO YOU WANT TO RESTART?")
+            while True:
+                if choice == "y" or choice == "yes":
+                    scene_1()
+                elif choice == "n" or choice == "no":
+                    exit()
+                else:
+                    print("Invalid Input. Expected: 'y' or 'n'")
 
     elif choice == "no":
-        s_print()
+        s_print("You decide to immediately continue to the next area.")
+        time.sleep(0.7)
+        s_print("Distant screaming is heard in the distance. Since you didn't warn them, they were met by suprise.")
+        scene_4()
 def scene_4():
-    print()
-
+    print("While you two make your way over the cake fields you notice a gingerbread child following you. You talk to her and get to know her. You find out her name is Fiona you two decide to take her with you to the human world. After a while of you three walk over the cake fields you see two different cities Either you can go to Cola harbor, Halloween city or you can go in between them. If you go to Cola harbor you can take the ship to the portal, if you go to Halloween City, you encounter licorice soldiers and you will have to fight them. (see Halloween City Fight) If you go between them you have to walk around and you come across a licorice soldier. Surprisingly, she means no harm. She disagrees with the queen’s motives and is currently hiding from the queen. She tells you that if you want to leave candy land you need to go through cola harbor. You can trust her. If you don’t and you go to Halloween city instead you get met with soldiers Here you have to fight them. ")
+    print("In halloween city you were supposed to have a small minigame, which i couldnt make because of a lack of time.")
+    scene_5()
 def scene_5():
-    print()
+    print("You leave to get to the island with the portal. During the trip you can see Swedish fish in the ocean and a lot of other gummy sea creatures. Once you arrive at the island you see another ship approaching. Infront of you is a giant sour roll that is all rolled out, forming a road. You have to run. Every answer that is answered correctly gives you more speed. If you answer at least 7 of the 15 questions correct you escape the soldiers. If you get 5 or 6 out of 15 right, you have to fight them. If you get less than 5 right, you get killed on the spot. Once you outrun the soldiers you arrive at the portal. You let Bob and Fiona go through first and then you go through. You wake up in a pack of gummy bears and you get eaten last. that is the good ending")
 
 startcode()
