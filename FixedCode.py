@@ -1,7 +1,6 @@
 import time
 
 
-
 def s_print(string):
     for char in string:
         print(char, end='', flush=True,)
@@ -26,7 +25,6 @@ def startcode():
             print()
             time.sleep(3)
             scene_1()
-            break
         else:
             exit()
 
@@ -70,25 +68,55 @@ def ArrestedAtHomeEnding():
     s_print("You realise Bob was not joking and try to make a run for it.\nSadly, you were too late.")
     s_print("you get arrested by soldiers and get killed later.")
 
+    print("ARRESTED AT HOME ENDING UNLOCKED.")
+    print("DO YOU WANT TO RESTART?:")
+    choice = input("> ").strip().lower()
+    while True:
+        if choice == "y" or choice == "yes":
+            startcode()
+        elif choice == "n" or choice == "no":
+            exit()
+        else:
+            print("Invalid Input. Expected: 'y' or 'n'")
+
+def arrested_in_candy_floss_forest():
+    print()
 
 def scene_2():
     s_print("[Y/N]: 'Then we will have to leave right now!'")
-    s_print()
-    s_print()
-    s_print()
-    s_print()
-    s_print()
-    s_print()
-    s_print()
-    s_print()
-    s_print()
-    s_print()
-    s_print()
-    s_print()
-    s_print()
-    s_print()
-    s_print()
-    s_print()
+    s_print("You grab a few things you don't want to leave behind and leave immediately.")
+    s_print("[Y/N]: 'How do you even know this?'")
+    s_print("[Bob]: 'I overheard a few soldiers talking while I was walking through the town?")
+    s_print("both of you make your way to the candy floss forest.")
+    s_print("[Bob]: I have never been here before. It's beautiful.")
+    s_print("[Y/N]: 'Don't become too attached. We won't ever see this again.")
+    s_print("...")
+    s_print("[Y/N]: 'Where are we even going?")
+    s_print("[Bob]: We'll be going to the human world.")
+    s_print("[Y/N]: 'But don't we have to wait one more month?'")
+    s_print("[Bob]: 'We have no other choice. Either we get killed here and we will be a waste of food,\n Or we leave early.'")
+    s_print("You two walk in silence for a moment. The feeling of sadness and fear is setting in.")
+    s_print("You are leaving behind everything you know. The house you have lived you whole life in,\n Your neighbors, Everything.")
+    s_print("[Y/N]: 'I'm going to miss home.'")
+    s_print("[Bob]: 'Me too, Y/N.'")
+    s_print("Soon, you two arrive at a part with three different paths,")
+    s_print("The right path looks peacefull, The path infront of you looks very dark and the left path looks normal.")
+    s_print("[Bob]: 'Where do we go now?'")
+    s_print("You think for a moment, and decide to go..")
+    choice = input("left, right, forward or back >").lower().strip()
+    while True:
+        if choice == "back":
+            arrested_in_candy_floss_forest()
+        elif choice == "right":
+            print()
+        elif choice == "left":
+            print()
+        elif choice == "forward":
+            print()
+        else:
+            print()
+    
+
 
 def scene_3():
     print()
