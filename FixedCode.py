@@ -1,5 +1,3 @@
-from secrets import choice
-from subprocess import check_output
 import time
 
 
