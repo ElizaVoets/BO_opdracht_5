@@ -12,7 +12,11 @@ def s_print(string):
 
 def startcode():
     s_print("Welcome!")
-    time.sleep(0.7)
+    time.sleep(1)
+    s_print("This is a game to raise awareness to people that have to flee their own country because they are not safe in their own country.")
+    time.sleep(1)
+    s_print("In this game, you play as a gummybear that has to flee from the candy world because of the licorice queen that wants to destroy every piece of sweet candy.")
+    time.sleep(1)
     s_print("Do you want to start the game?")
     userconfirmation = input("yes or no:")
     while True:
@@ -338,6 +342,8 @@ def hc_met_rebel():
             s_print("Incorrect input")
 
 def HalloweenCity_minigame():
+    
+
     def math_problems():
         operators = {
             '+': operator.add,
@@ -363,6 +369,9 @@ def HalloweenCity_minigame():
 
     def minigame():
         print("HALLOWEEN CITY FIGHT:\n\n")
+        time.sleep(1)
+        print("In this minigame you have to answer math questions. If you dont answer enough questions correctly, you lose.")
+        time.sleep(1)
         score = 0
         correctquestions = 0
         for i in range(15):
@@ -413,6 +422,9 @@ def HCm_met_rebel():
 
     def minigame():
         print("HALLOWEEN CITY FIGHT:\n\n")
+        time.sleep(1)
+        print("In this minigame you have to answer math questions. If you dont answer enough questions correctly, you lose.")
+        time.sleep(1)
         score = 1
         correctquestions = 0
         for i in range(15):
@@ -559,7 +571,10 @@ def scene_4():
             halloweencity()
 
 def post_halloweencityfight():
-    print()
+    s_print("[Bob]: We have to go now!")
+    time.sleep(0.7)
+    s_print("You guys make your way to Cola Harbor as soon as you can")
+    colaharbor()
 
 def scene_5():
     print("")
