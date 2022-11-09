@@ -673,7 +673,7 @@ def finalminigame():
         return guess == answer
 
     def minigame():
-        print("HALLOWEEN CITY FIGHT:\n\n")
+        print("FINAL BOSS FIGHT:\n\n")
         score = 0
         secondscore = 0
         correctquestions = 0
