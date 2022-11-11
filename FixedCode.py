@@ -367,9 +367,8 @@ def HalloweenCity_minigame():
         num2 = random.randint(1, 10)
         operation = random.choice(list(operators.keys()))
         answer = operators.get(operation)(num1, num2)
-        if answer >= 0:
-            s_print(f"What is {num1} {operation} {num2}?:")
-            time.sleep(0.7)
+        s_print(f"What is {num1} {operation} {num2}?:")
+        time.sleep(0.7)
 
         return answer
 
@@ -536,7 +535,7 @@ def scene_4():
     s_print("Between the two cities there is a long road.")
     time.sleep(0.7)
     s_print("Where do you go?:")
-    choice = input("a) Cola Harbor\nb) The long road \n c) Halloween City")
+    choice = input("a) Cola Harbor\nb) The long road \nc) Halloween City\n> ")
     while True:
         if choice == "a":
             colaharbor()
