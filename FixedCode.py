@@ -367,10 +367,21 @@ def HalloweenCity_minigame():
         num2 = random.randint(1, 10)
         operation = random.choice(list(operators.keys()))
         answer = operators.get(operation)(num1, num2)
-        s_print(f"What is {num1} {operation} {num2}?:")
-        time.sleep(0.7)
+        if num1 >= num2:
+            s_print(f"What is {num1} {operation} {num2}?:")
+            time.sleep(0.7)
+        elif num2 >= num1 and operation == '/':
+            s_print(f"What is {num1} {operation} {num2}?:\nYou are allowed to use a calculator for this one")
+            time.sleep(0.7)
+        elif num2 >= num1 and operation != '/':
+            s_print(f"What is {num1} {operation} {num2}?:")
+            time.sleep(0.7)
 
         return answer
+
+            
+
+        
 
     def ask_question():
         answer = math_problems()
@@ -379,9 +390,6 @@ def HalloweenCity_minigame():
 
     def minigame():
         print("HALLOWEEN CITY FIGHT:\n\n")
-        time.sleep(1)
-        print("In this minigame you have to answer math questions. If you dont answer enough questions correctly, you lose.")
-        time.sleep(1)
         score = 0
         correctquestions = 0
         for i in range(15):
@@ -393,7 +401,14 @@ def HalloweenCity_minigame():
                 time.sleep(0.7)
                 score += 1
             else:
-                    s_print("incorrect!")
+                print("incorrect")
+            
+        if score >= 10:
+            s_print("You defeated the Soldiers!")
+        elif score >= 5:
+            s_print("You escaped the soldiers!")
+        elif score <= 5:
+            s_print("")
             
         if score >= 10:
             s_print("You defeated the Soldiers!")
@@ -419,7 +434,13 @@ def HCm_met_rebel():
         num2 = random.randint(1, 10)
         operation = random.choice(list(operators.keys()))
         answer = operators.get(operation)(num1, num2)
-        if answer >= 0:
+        if num1 >= num2:
+            s_print(f"What is {num1} {operation} {num2}?:")
+            time.sleep(0.7)
+        elif num2 >= num1 and operation == '/':
+            s_print(f"What is {num1} {operation} {num2}?:\nYou are allowed to use a calculator for this one")
+            time.sleep(0.7)
+        elif num2 >= num1 and operation != '/':
             s_print(f"What is {num1} {operation} {num2}?:")
             time.sleep(0.7)
 
@@ -660,6 +681,7 @@ def killedonsourrollroad():
 
 def finalminigame():
     def math_problems():
+
         operators = {
             '+': operator.add,
             '-': operator.sub,
@@ -671,11 +693,21 @@ def finalminigame():
         num2 = random.randint(1, 10)
         operation = random.choice(list(operators.keys()))
         answer = operators.get(operation)(num1, num2)
-        if answer >= 0:
+        if num1 >= num2:
+            s_print(f"What is {num1} {operation} {num2}?:")
+            time.sleep(0.7)
+        elif num2 >= num1 and operation == '/':
+            s_print(f"What is {num1} {operation} {num2}?:\nYou are allowed to use a calculator for this one")
+            time.sleep(0.7)
+        elif num2 >= num1 and operation != '/':
             s_print(f"What is {num1} {operation} {num2}?:")
             time.sleep(0.7)
 
         return answer
+
+            
+
+        
 
     def ask_question():
         answer = math_problems()
@@ -683,10 +715,11 @@ def finalminigame():
         return guess == answer
 
     def minigame():
-        print("FINAL BOSS FIGHT:\n\n")
+        time.sleep(1)
+        print("FINAL MINIGAME:\n\n")
         score = 0
-        secondscore = 0
         correctquestions = 0
+        secondscore = 0
         for i in range(15):
             if ask_question() == True:
                 s_print("correct answer")
@@ -696,36 +729,16 @@ def finalminigame():
                 time.sleep(0.7)
                 score += 1
             else:
-                s_print("incorrect!")
+                print("incorrect")
             
-        if score >= 7:
-            s_print("You were fast enough and ran through the portal")
-            time.sleep(0.7)
-            s_print("You let Fiona go through first, then bob and you go through last.")
-            time.sleep(0.7)
-            s_print("And then it all goes black")
-            time.sleep(0.7)
-            s_print("The last thing you see is plastic.")
-            time.sleep(0.7)
-            s_print("Not soon after, you get picked up and eaten by little timmy on the playground")
-
-            print("\n\nYOU WON!")
-            time.sleep(0.7)
-            print("WOULD YOU LIKE TO PLAY AGAIN?")
-            while True:        
-                choice = input("yes or no: ").lower().strip()
-                if choice == "yes" or choice == "y":
-                    s_print("Restarting...")
-                    time.sleep(3)
-                    print("\n\n\n\n")
-                    startcode()
-                elif choice == "no" or choice == "n":
-                    print("Thank you for playing!")
-                    time.sleep(0.7)
-                    exit()
-                else:
-                    print("Invalid input")
-                    time.sleep(0.7)
+        if score >= 5:
+            s_print("You escaped the soldiers!")
+        elif score <= 5:
+            s_print("")
+            
+        elif score >= 7:
+            escape()
+            
             
         elif score >= 5 and score <= 7:
             s_print("You werent fast enough, but can still fight them to escape.")
@@ -739,6 +752,7 @@ def finalminigame():
                     secondscore += 1
                 else:
                     s_print("incorrect!")
+                    time.sleep(0.7)
 
             if secondscore == 5 or secondscore >= 3:
                 s_print("You kill the soldiers and quickly escape.")
@@ -757,4 +771,33 @@ def ending():
 
     finalminigame()
     
+def escape():
+    s_print("You were fast enough and ran through the portal")
+    time.sleep(0.7)
+    s_print("You let Fiona go through first, then bob and you go through last.")
+    time.sleep(0.7)
+    s_print("And then it all goes black")
+    time.sleep(0.7)
+    s_print("The last thing you see is plastic.")
+    time.sleep(0.7)
+    s_print("Not soon after, you get picked up and eaten by little timmy on the playground")
+
+    print("\n\nYOU WON!")
+    time.sleep(0.7)
+    print("WOULD YOU LIKE TO PLAY AGAIN?")
+    while True:        
+        choice = input("yes or no: ").lower().strip()
+        if choice == "yes" or choice == "y":
+            s_print("Restarting...")
+            time.sleep(3)
+            print("\n\n\n\n")
+            startcode()
+        elif choice == "no" or choice == "n":
+            print("Thank you for playing!")
+            time.sleep(0.7)
+            exit()
+        else:
+            print("Invalid input")
+            time.sleep(0.7)
+
 startcode()
