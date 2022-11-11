@@ -205,45 +205,80 @@ def scene_3():
     s_print("[Y/N]: 'Seems like they don't.'")
     time.sleep(0.7)
     s_print("[Bob]: 'Should we warn these people?'")
-    choice = input("a) 'We should warn them'\nb) 'They'll figure it out themselfes\n> ").lower()
+    while True:
+        choice = input("a) 'We should warn them'\nb) 'They'll figure it out themselfes\n> ").lower()
 
-    if choice == "a":
-        s_print("You decide to go to the major of gingerbread city and tell him about the situation.")
-        time.sleep(0.7)
-        s_print("Just as you finished explaining, everything starts to shake.")
-        time.sleep(0.7)
-        s_print("You go outside and you see the licorice soldiers attacking the city. You see a building falling.")
-        time.sleep(0.7)
-        s_print("The problem is, You do not know if it's falling towards, or away from you.. Do you move or not?")
-        choice = input("> ").lower()
+        if choice == "a":
+            s_print("You decide to go to the major of gingerbread city and tell him about the situation.")
+            time.sleep(0.7)
+            s_print("Just as you finished explaining, everything starts to shake.")
+            time.sleep(0.7)
+            s_print("You go outside and you see the licorice soldiers attacking the city. You see a building falling.")
+            time.sleep(0.7)
+            s_print("The problem is, You do not know if it's falling towards, or away from you.. Do you move or not?")
 
-        if choice == "move":
-            s_print("You move away and the building crashes down on the place you were just standing.")
-            time.sleep(0.7)
-            s_print("[Bob]: 'Y/N! Are you okay?!'")
-            time.sleep(0.7)
-            s_print("[Y/N]: 'I'm fine..'")
-            time.sleep(0.7)
-            s_print("Just as you say that, you notice another building falling towards a little gingerbread girl.")
-            time.sleep(0.7)
-            s_print("Do you save her?")
-            choice = input("> ").lower()
-
-            if choice == "y" or choice == "yes":
-                s_print("You run towards the child, but now you have to decide if you push her forward or pull her back.")
-                time.sleep(0.7)
-                s_print("Do you push or pull?")
-                choice = input("> ").lower
-                
-                if choice == "push":
-                    s_print("You push the girl away from the building, but realise you dont have enough time to get away.")
+            while True:
+                choice = input("> ").lower()
+            
+                if choice == "move":
+                    s_print("You move away and the building crashes down on the place you were just standing.")
                     time.sleep(0.7)
-                    s_print("You get crushed by the building and die.")
+                    s_print("[Bob]: 'Y/N! Are you okay?!'")
                     time.sleep(0.7)
-                    print("\nCRUSHED BY A BUILDING WHILE SAVING A CHILD ENDING UNLOCKED!")
+                    s_print("[Y/N]: 'I'm fine..'")
                     time.sleep(0.7)
-                    print("DO YOU WANT TO RESTART?")
+                    s_print("Just as you say that, you notice another building falling towards a little gingerbread girl.")
+                    time.sleep(0.7)
+                    s_print("Do you save her?")
                     while True:
+                        choice = input("> ").lower()
+                    
+                        if choice == "y" or choice == "yes":
+                            s_print("You run towards the child, but now you have to decide if you push her forward or pull her back.")
+                            time.sleep(0.7)
+                            s_print("Do you push or pull?")
+                            while True:
+                                choice = input("> ").lower
+                        
+                                if choice == "push":
+                                    s_print("You push the girl away from the building, but realise you dont have enough time to get away.")
+                                    time.sleep(0.7)
+                                    s_print("You get crushed by the building and die.")
+                                    time.sleep(0.7)
+                                    print("\nCRUSHED BY A BUILDING WHILE SAVING A CHILD ENDING UNLOCKED!")
+                                    time.sleep(0.7)
+                                    while True:
+                                        choice = input("DO YOU WANT TO RESTART?")
+                                    
+                                        if choice == "y" or choice == "yes":
+                                            scene_1()
+                                        elif choice == "n" or choice == "no":
+                                            exit()
+                                        else:
+                                            print("Invalid Input. Expected: 'y' or 'n'")
+
+                                elif choice == "pull":
+                                    s_print("You save both yourself and the girl. The whole town starts cheering and the major thanks you.")
+                                    s_print("He tells you the quickest way to the portal is through the cake fields")
+                                    scene_4()
+                
+                        elif choice == "n" or choice == "no":
+                            s_print("You decide to do nothing, but Bob decides to save the child and sucessfully saves her.")
+                            time.sleep(0.7)
+                            s_print("The major thanks you and tells you to go towards the cake fields. That is the fastest way to the portal.")
+                            time.sleep(0.7)
+                            s_print("You leave the city and make your way to the fields.")
+                            scene_4()
+
+                elif choice == "don't move":
+                    s_print("You decide to stay where you are. Wrong choice, the building crushes you.")
+                    time.sleep(0.7)
+                    print("\nCRUSHED BY BUILDING ENDING UNLOCKED")
+                    time.sleep(0.7)
+                    while True:
+
+                        choice = input("DO YOU WANT TO RESTART?")
+
                         if choice == "y" or choice == "yes":
                             scene_1()
                         elif choice == "n" or choice == "no":
@@ -251,38 +286,14 @@ def scene_3():
                         else:
                             print("Invalid Input. Expected: 'y' or 'n'")
 
-                if choice == "pull":
-                    s_print("You save both yourself and the girl. The whole town starts cheering and the major thanks you.")
-                    s_print("He tells you the quickest way to the portal is through the cake fields")
-                    scene_4()
-           
-            elif choice == "n" or choice == "no":
-                s_print("You decide to do nothing, but Bob decides to save the child and sucessfully saves her.")
-                time.sleep(0.7)
-                s_print("The major thanks you and tells you to go towards the cake fields. That is the fastest way to the portal.")
-                time.sleep(0.7)
-                s_print("You leave the city and make your way to the fields.")
-                scene_4()
-
-        elif choice == "don't move":
-            s_print("You decide to stay where you are. Wrong choice, the building crushes you.")
+        elif choice == "b":
+            s_print("You decide to immediately continue to the next area.")
             time.sleep(0.7)
-            print("\nCRUSHED BY BUILDING ENDING UNLOCKED")
-            time.sleep(0.7)
-            print("DO YOU WANT TO RESTART?")
-            while True:
-                if choice == "y" or choice == "yes":
-                    scene_1()
-                elif choice == "n" or choice == "no":
-                    exit()
-                else:
-                    print("Invalid Input. Expected: 'y' or 'n'")
+            s_print("Distant screaming is heard in the distance. Since you didn't warn them, they were met by suprise.")
+            scene_4()
 
-    elif choice == "b":
-        s_print("You decide to immediately continue to the next area.")
-        time.sleep(0.7)
-        s_print("Distant screaming is heard in the distance. Since you didn't warn them, they were met by suprise.")
-        scene_4()
+        else:
+            print("Invalid input")
 
 def colaharbor():
     s_print("You decide to go to Cola Harbor.")
